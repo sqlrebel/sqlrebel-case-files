@@ -1,0 +1,8 @@
+Heaps and Page compression are not friends.
+I found out this to my cost one day, if you have page compression enabled on a heap and data gets inserted into that heap, any new allocated pages are not compressed.
+How crazy is that.
+Newly allocated pages will only get compressed for the following two reasons:
+  1. The heap is rebuilt
+  2. The data is bulk imported into the heap.
+
+This is mad, like what's the logic behind this.
